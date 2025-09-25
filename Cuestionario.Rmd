@@ -5,7 +5,7 @@ date: "2025-09-25"
 output: html_document
 ---
 
-#Probando esto 
+##Probando esto 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
