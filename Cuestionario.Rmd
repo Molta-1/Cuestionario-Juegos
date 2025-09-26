@@ -4,16 +4,24 @@ author: "Sebastián Calvo"
 date: "2025-09-25"
 output: html_document
 ---
-```{css}
-.columns {display : flex;}
-h3 {color: #11BA6E;}
-#texto {color : #48E8A2}
+```{css, echo = FALSE}
+body {background-color: #c8c3a5}
+body {font-family: Arial, Helvetica, sans-serif}
+
+h1 {color: #414141}
+h1 {text-shadow: 3px 2px #969696}
+
+h3 {color: #414141}
+h3 {text-shadow: 2px 2px  #969696}
+
+#texto {color: #414141}
+
+h4 {color: #414141}
 ```
 ### ¿Qué busca este cuestionario? {#texto}
 Por medio de este cuestionario se busca descubrir cual o cuales son los videojuegos, géneros y tipos de juegos que 
 se consumen en estos momentos, además de las plataformas en donde usualmente las personas juegan
 
-### ¿Cual es el objetivo de esta información? 
+### ¿Cual es el objetivo de esta información? {#texto}
 Observar cuales son las tendencias o preferencias de las personas, cual es la inversión de tiempo y/o dinero que en promedio realizan, además de ver si juegan en una o mas plataformas y el porqué de estas
 
-<a href="#texto">
