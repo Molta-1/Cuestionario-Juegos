@@ -8,6 +8,7 @@ output: html_document
 body {background-color: #c8c3a5}
 body {font-family: Arial, Helvetica, sans-serif}
 
+
 h1 {color: #414141}
 h1 {text-shadow: 3px 2px #969696}
 
