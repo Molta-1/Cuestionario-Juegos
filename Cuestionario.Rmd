@@ -5,9 +5,9 @@ date: "2025-09-25"
 output: html_document
 ---
 
-## ¿Qué busca este cuestionario?
+### ¿Qué busca este cuestionario?
 Por medio de este cuestionario se busca descubrir cual o cuales son los videojuegos, géneros y tipos de juegos que 
 se consumen en estos momentos, además de las plataformas en donde usualmente las personas juegan
 
-## ¿Cual es el objetivo de esta información? 
+### ¿Cual es el objetivo de esta información? 
 Observar cuales son las tendencias o preferencias de las personas, cual es la inversión de tiempo y/o dinero que en promedio realizan, además de ver si juegan en una o mas plataformas y el porqué de estas
