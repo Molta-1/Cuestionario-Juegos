@@ -1,31 +1,13 @@
 ---
-title: "Cuestionario"
+title: "Cuestionario Videojuegos"
 author: "Sebastián Calvo"
 date: "2025-09-25"
 output: html_document
 ---
 
-##Probando esto 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## ¿Qué busca este cuestionario?
+Por medio de este cuestionario se busca descubrir cual o cuales son los videojuegos, géneros y tipos de juegos que 
+se consumen en estos momentos, además de las plataformas en donde usualmente las personas juegan
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## ¿Cual es el objetivo de esta información? 
+Observar cuales son las tendencias o preferencias de las personas, cual es la inversión de tiempo y/o dinero que en promedio realizan, además de ver si juegan en una o mas plataformas y el porqué de estas
