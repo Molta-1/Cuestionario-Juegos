@@ -1,7 +1,7 @@
 ---
 title: "Cuestionario Videojuegos"
 author: "Sebastian Calvo"
-date: "2025-09-25"
+date: '`r format(Sys.Date())`'
 output:
   html_document:
 ---
@@ -9,28 +9,57 @@ output:
 body {background-color: #c8c3a5}
 body {font-family: Arial, Helvetica, sans-serif}
 
-
 h1 {color: #414141}
 h1 {text-shadow: 3px 2px #969696}
 
-h3 {color: #414141}
-h3 {text-shadow: 1px 2px  #969696}
+h3 {
+  background-color: #414141;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c8c3a5;
+  box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
+}
 
-#texto {color: #414141}
+#texto {
+  color: #414141;
+  border-bottom: 2px
+}
 
 h4 {color: #414141}
+
+a{
+  background-color: rgb(48, 48, 40, 0.2);
+  padding: 8px;
+  padding-right: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #414141
+}
+
+a:link{
+  background-color: rgb(48, 48, 40, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #414141
+}
+
+a:hover{
+  background-color: #414141;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c8c3a5;
+  box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
+}
 ```
 ### ¿Qué busca este cuestionario? {#texto}
-|   Por medio de este cuestionario se busca descubrir cual o cuales son los videojuegos, géneros y tipos de juegos
-|   que se consumen en estos momentos, además de las plataformas en donde usualmente las personas juegan
+Por medio de este cuestionario se busca descubrir cual o cuales son los videojuegos, géneros y tipos de juegos
+que se consumen en estos momentos, además de las plataformas en donde usualmente las personas juegan
 
 ### ¿Cuál es el objetivo de esta información? {#texto} 
-|   Observar cuales son las tendencias o preferencias de las personas, cual es la inversión de tiempo y/o dinero 
-|   que en promedio realizan, además de ver si juegan en una o mas plataformas y el porqué de estas
+Observar cuales son las tendencias o preferencias de las personas, cual es la inversión de tiempo y/o dinero 
+que en promedio realizan, además de ver si juegan en una o mas plataformas y el porqué de estas
 
 ### ¿Por qué nos interesan estos datos? {#texto}
-|   Los distintos datos que vamos a recolectar nos permiten ver distintas maneras de como este medio se     consume 
-|   lo cual daremos una explicación breve de lo que se espera recolectar por cada ítem
+Los distintos datos que vamos a recolectar nos permiten ver distintas maneras de como este medio se     consume 
+lo cual daremos una explicación breve de lo que se espera recolectar por cada ítem
 
+### Link del formulario {#texto}
 
+<a href ="https://docs.google.com/forms/d/e/1FAIpQLSfLvusKTyUyjkAvmi6BkSaZTSx6WlgSS7hd67fhct9cFixUww/viewform?usp=header">Link del formulario</a>
 
