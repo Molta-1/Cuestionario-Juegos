@@ -6,11 +6,16 @@ output:
   html_document:
 ---
 ```{css, echo = FALSE}
-body {background-color: #c8c3a5}
-body {font-family: Arial, Helvetica, sans-serif}
+body {
+  background-color: #c8c3a5;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("lineas2.png"), url("lineas.png"), url("circulos.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, top right, top left;
+}
 
 h1 {color: #414141}
-h1 {text-shadow: 3px 2px #969696}
+h1 {text-shadow: 3px 4px #969696}
 
 h3 {
   background-color: #414141;
@@ -60,7 +65,7 @@ que en promedio realizan, además de ver si juegan en una o mas plataformas y el
 Los distintos datos que vamos a recolectar nos permiten ver distintas maneras de como este medio se consume 
 lo cual daremos una explicación breve de lo que se espera recolectar por cada ítem
 
-### <img src="squarel.png" /> Link del formulario {#texto}
+### <img src="squarel.png" /> Link del formulario 
 
 <a href ="https://docs.google.com/forms/d/e/1FAIpQLSfLvusKTyUyjkAvmi6BkSaZTSx6WlgSS7hd67fhct9cFixUww/viewform?usp=header">Link del formulario</a>
 
