@@ -6,6 +6,7 @@ output:
   html_document:
 ---
 ```{css, echo = FALSE}
+/*Inicio del cuerpo del programa*/
 body {
   background-color: #C7C2AF;
   font-family: Arial, Helvetica, sans-serif;
@@ -14,33 +15,34 @@ body {
   background-position: top left, top right, top left;
 }
 
-/*Es lo que se va a mostrar de fondo en la página*/
+/*Final del cuerpo del programa*/
 
+/*Inicio de la barra de búsqueda*/
 ul{
   list-style-type: none;
-  margin: 0;
+  margin-left: 6px;
   padding: 0;
   background-color: #C7C2AF;
   display: flex;
+  box-shadow:
+  -8px 0px #C7C2AF,
+  -10px 0px rgb(65, 65, 65, 0.2),
+  -15px 0px #C7C2AF,
+  -24px 0px rgb(65, 65, 65, 0.2);
 }
-
-/*Es la barra de búsqueda*/
 
 ul li a{
   background-color: rgb(48, 48, 40, 0.2);
-  font-size: 20px;
-  padding: 8px;
+  font-size: 15px;
   padding-right: 50px;
-  margin: 0 10px;
+  margin: 0 8px;
   font-family: Arial, Helvetica, sans-serif;
   color: #414141;
 }
 
-/*El diseño del contenido de la barra*/
-
 ul li a:hover{
   background-color: #414141;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   color: #C7C2AF;
   box-shadow: 
@@ -51,27 +53,16 @@ ul li a:hover{
   0 -5px #414141;
 }
 
-/*Diseño del hover de la barra de búsqueda*/
+/*Final de la barra de búsqueda*/
+
+/*Inicio del texto utilizado*/
 
 h1 {color: #414141}
 h1 {text-shadow: 3px 4px #969696}
 
-h3 {
-  background-color: #414141;
-  padding: 8px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #C7C2AF;
-  box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
-}
-
-#texto {
-  color: #414141;
-  border-bottom: 2px
-}
-
 h4 {color: #414141}
 
-/*Diseño del texto utilizado*/
+/*Final del texto utilizado*/
 
 /*inicio del apartado de links*/
 a{
@@ -94,7 +85,7 @@ a:hover{
   color: #C7C2AF;
   text-decoration:none;
   box-shadow: 
-  3px 2px 3px rgb(87, 87, 72, 0.5),  
+  2px 2px 3px rgb(87, 87, 72, 0.5),  
   0 3px #C7C2AF,
   0 5px #414141,
   0 -3px #C7C2AF,
@@ -108,14 +99,14 @@ a:hover{
 .square{
   width: 20px;
   height: 20px;
-  vertical-align: middle;
+  margin-bottom: 4px;
 }
 
 .squarel{
   width: 20px;
   height: 20px;
-  vertical-align: middle;
-  display: none
+  display: none;
+  margin-bottom: 4px;
 }
 
 li:hover .square:not(.squarel) {
@@ -126,22 +117,74 @@ li:hover .squarel {
   display: inline;
 }
 
+.arrow{
+  width: 25px;
+  height: 22px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.arrowl{
+  width: 25px;
+  height: 22px;
+  display: none;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+p:hover .arrow:not(.arrowl) {
+  display: none;
+}
+
+p:hover .arrowl {
+  display: inline;
+}
+
 /*Inicio del apartado de íconos utilizados*/
+
+/*Inicio del apartado de los títulos (dropdown)*/
 
 #introduccion{
   background-color: #D4D0BA;
   width: 400px;
   height: 300px;
-  padding: 20px;
-  box-shadow: 2px 2px rgb(87, 87, 72, 0.6);
-  cursor: pointer;  
-
+  padding-top: 20px;
+  box-shadow:
+  3px 3px rgb(87, 87, 72, 0.5),  
+  -20px 0px #C7C2AF,
+  -22px 0px rgb(65, 65, 65, 0.2),
+  -28px 0px #C7C2AF,
+  -38px 0px rgb(65, 65, 65, 0.2);
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 35px;
 }
 
 
 #intro {
+  margin-top: 30px;
   display: none;
   cursor: auto;
+}
+
+#encabezado {
+  background-color: #D4D0BA;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #414141;
+  
+}
+
+#encabezado:hover {
+  background-color: #414141;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #C7C2AF;
+  box-shadow:
+  0 3px #C7C2AF,
+  0 5px #414141,
+  0 -3px #C7C2AF,
+  0 -5px #414141;
 }
 
 ```
@@ -159,15 +202,18 @@ function intro() {
 ```
 
 <ul>
-  <li><a class="intro" onclick="intro()"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Introducción</a></li>
-  <li><a href="#poblacion"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Población Meta</a></li>
-  <li><a href="#objetivo"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Objetivo General</a></li>
-  <li><a href="#formulario"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Formulario</a></li>
+  <li><a class="intro" onclick="intro()"><img src="square.png" class="square"><img src="squarel.png" class="squarel">INTRODUCCIÓN</a></li>
+  <li><a href="#poblacion"><img src="square.png" class="square"><img src="squarel.png" class="squarel">POBLACIÓN META</a></li>
+  <li><a href="#objetivo"><img src="square.png" class="square"><img src="squarel.png" class="squarel">OBJETIVO GENERAL</a></li>
+  <li><a href="#formulario"><img src="square.png" class="square"><img src="squarel.png" class="squarel">FORMULARIO</a></li>
 </ul>
 
 <div id="intro">
-<h1>Introducción </h1> 
+<h1>INTRODUCCIÓN </h1> 
   <div id="introduccion">
-    
+  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
+  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
+  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Intrucciones</p><h3>
+  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
   </div>
 </div>

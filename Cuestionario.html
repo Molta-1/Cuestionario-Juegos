@@ -358,6 +358,7 @@ display: none;
 
 
 <style type="text/css">
+
 body {
 background-color: #C7C2AF;
 font-family: Arial, Helvetica, sans-serif;
@@ -366,27 +367,30 @@ background-repeat: no-repeat, no-repeat;
 background-position: top left, top right, top left;
 }
 
+
 ul{
 list-style-type: none;
-margin: 0;
+margin-left: 6px;
 padding: 0;
 background-color: #C7C2AF;
 display: flex;
+box-shadow:
+-8px 0px #C7C2AF,
+-10px 0px rgb(65, 65, 65, 0.2),
+-15px 0px #C7C2AF,
+-24px 0px rgb(65, 65, 65, 0.2);
 }
-
 ul li a{
 background-color: rgb(48, 48, 40, 0.2);
-font-size: 20px;
-padding: 8px;
+font-size: 15px;
 padding-right: 50px;
-margin: 0 10px;
+margin: 0 8px;
 font-family: Arial, Helvetica, sans-serif;
 color: #414141;
 }
-
 ul li a:hover{
 background-color: #414141;
-font-size: 20px;
+font-size: 15px;
 font-family: Arial, Helvetica, sans-serif;
 color: #C7C2AF;
 box-shadow: 3px 2px 3px rgb(87, 87, 72, 0.5), 0 3px #C7C2AF,
@@ -395,19 +399,9 @@ box-shadow: 3px 2px 3px rgb(87, 87, 72, 0.5), 0 3px #C7C2AF,
 0 -5px #414141;
 }
 
+
 h1 {color: #414141}
 h1 {text-shadow: 3px 4px #969696}
-h3 {
-background-color: #414141;
-padding: 8px;
-font-family: Arial, Helvetica, sans-serif;
-color: #C7C2AF;
-box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
-}
-#texto {
-color: #414141;
-border-bottom: 2px
-}
 h4 {color: #414141}
 
 
@@ -428,21 +422,23 @@ background-color: #414141;
 font-family: Arial, Helvetica, sans-serif;
 color: #C7C2AF;
 text-decoration:none;
-box-shadow: 0px 3px rgb(87, 87, 72, 0.2),
-0 5px #C7C2AF,
-0 8px #414141;
+box-shadow: 2px 2px 3px rgb(87, 87, 72, 0.5), 0 3px #C7C2AF,
+0 5px #414141,
+0 -3px #C7C2AF,
+0 -5px #414141;
 }
+
 
 .square{
 width: 20px;
 height: 20px;
-vertical-align: middle;
+margin-bottom: 4px;
 }
 .squarel{
 width: 20px;
 height: 20px;
-vertical-align: middle;
-display: none
+display: none;
+margin-bottom: 4px;
 }
 li:hover .square:not(.squarel) {
 display: none;
@@ -450,17 +446,62 @@ display: none;
 li:hover .squarel {
 display: inline;
 }
+.arrow{
+width: 25px;
+height: 22px;
+margin-bottom: 4px;
+margin-left: 4px;
+}
+.arrowl{
+width: 25px;
+height: 22px;
+display: none;
+margin-bottom: 4px;
+margin-left: 4px;
+}
+p:hover .arrow:not(.arrowl) {
+display: none;
+}
+p:hover .arrowl {
+display: inline;
+}
+
 
 #introduccion{
 background-color: #D4D0BA;
 width: 400px;
 height: 300px;
-padding: 20px;
-box-shadow: 2px 2px rgb(87, 87, 72, 0.6);
-cursor: pointer; }
+padding-top: 20px;
+box-shadow:
+3px 3px rgb(87, 87, 72, 0.5), -20px 0px #C7C2AF,
+-22px 0px rgb(65, 65, 65, 0.2),
+-28px 0px #C7C2AF,
+-38px 0px rgb(65, 65, 65, 0.2);
+cursor: pointer;
+margin-left: 20px;
+margin-top: 35px;
+}
 #intro {
+margin-top: 30px;
 display: none;
 cursor: auto;
+}
+#encabezado {
+background-color: #D4D0BA;
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+color: #414141;
+}
+#encabezado:hover {
+background-color: #414141;
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+color: #C7C2AF;
+box-shadow:
+0 3px #C7C2AF,
+0 5px #414141,
+0 -3px #C7C2AF,
+0 -5px #414141;
 }
 </style>
 <script>
@@ -477,26 +518,46 @@ function intro() {
 </script>
 <ul>
 <li>
-<a class="intro" onclick="intro()"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">Introducción</a>
+<a class="intro" onclick="intro()"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">INTRODUCCIÓN</a>
 </li>
 <li>
-<a href="#poblacion"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">Población
-Meta</a>
+<a href="#poblacion"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">POBLACIÓN
+META</a>
 </li>
 <li>
-<a href="#objetivo"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">Objetivo
-General</a>
+<a href="#objetivo"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">OBJETIVO
+GENERAL</a>
 </li>
 <li>
-<a href="#formulario"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">Formulario</a>
+<a href="#formulario"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">FORMULARIO</a>
 </li>
 </ul>
 <div id="intro">
 <h1>
-Introducción
+INTRODUCCIÓN
 </h1>
 <div id="introduccion">
-
+<p id="encabezado">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Propósito
+del Cuestionario
+</p>
+<h3>
+<p id="encabezado">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Importancia
+del Estudio
+</p>
+<h3>
+<p id="encabezado">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Intrucciones
+</p>
+<h3>
+<p id="encabezado">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Confidencialidad
+de los Datos
+</p>
+<h3>
+</div>
+</div>
 </div>
 </div>
 
