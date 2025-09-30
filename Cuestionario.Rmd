@@ -7,7 +7,7 @@ output:
 ---
 ```{css, echo = FALSE}
 body {
-  background-color: #c8c3a5;
+  background-color: #C7C2AF;
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("lineas2.png"), url("lineas.png"), url("circulos.png");
   background-repeat: no-repeat, no-repeat;
@@ -20,7 +20,7 @@ ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #c8c3a5;
+  background-color: #C7C2AF;
   display: flex;
 }
 
@@ -28,6 +28,7 @@ ul{
 
 ul li a{
   background-color: rgb(48, 48, 40, 0.2);
+  font-size: 20px;
   padding: 8px;
   padding-right: 50px;
   margin: 0 10px;
@@ -39,9 +40,15 @@ ul li a{
 
 ul li a:hover{
   background-color: #414141;
+  font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #c8c3a5;
-  box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
+  color: #C7C2AF;
+  box-shadow: 
+  3px 2px 3px rgb(87, 87, 72, 0.5),  
+  0 3px #C7C2AF,
+  0 5px #414141,
+  0 -3px #C7C2AF,
+  0 -5px #414141;
 }
 
 /*Diseño del hover de la barra de búsqueda*/
@@ -53,7 +60,7 @@ h3 {
   background-color: #414141;
   padding: 8px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #c8c3a5;
+  color: #C7C2AF;
   box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
 }
 
@@ -66,6 +73,7 @@ h4 {color: #414141}
 
 /*Diseño del texto utilizado*/
 
+/*inicio del apartado de links*/
 a{
   background-color: rgb(48, 48, 40, 0.2);
   padding: 8px;
@@ -73,8 +81,6 @@ a{
   font-family: Arial, Helvetica, sans-serif;
   color: #414141
 }
-
-/*Link del formulario*/
 
 a:link{
   background-color: rgb(48, 48, 40, 0.2);
@@ -85,12 +91,19 @@ a:link{
 a:hover{
   background-color: #414141;
   font-family: Arial, Helvetica, sans-serif;
-  color: #c8c3a5;
-  box-shadow: 0px 3px rgb(87, 87, 72, 0.2);
+  color: #C7C2AF;
   text-decoration:none;
+  box-shadow: 
+  3px 2px 3px rgb(87, 87, 72, 0.5),  
+  0 3px #C7C2AF,
+  0 5px #414141,
+  0 -3px #C7C2AF,
+  0 -5px #414141;
 }
 
-/*Diseño del link del formulario*/
+/*final del apartado de links*/
+
+/*Inicio del apartado de íconos utilizados*/
 
 .square{
   width: 20px;
@@ -113,13 +126,48 @@ li:hover .squarel {
   display: inline;
 }
 
-/*Diseño del elemento visual*/
+/*Inicio del apartado de íconos utilizados*/
+
+#introduccion{
+  background-color: #D4D0BA;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  box-shadow: 2px 2px rgb(87, 87, 72, 0.6);
+  cursor: pointer;  
+
+}
+
+
+#intro {
+  display: none;
+  cursor: auto;
+}
+
 ```
+```{js, echo = FALSE}
+function intro() {
+  var x = document.getElementById("intro");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+//función para mostrar el contenido de la introducción
+
+```
+
 <ul>
-  <li><a href="#introduccion"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Introducción</a></li>
+  <li><a class="intro" onclick="intro()"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Introducción</a></li>
   <li><a href="#poblacion"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Población Meta</a></li>
   <li><a href="#objetivo"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Objetivo General</a></li>
   <li><a href="#formulario"><img src="square.png" class="square"><img src="squarel.png" class="squarel">Formulario</a></li>
 </ul>
 
-# Introducción {#introduccion}
+<div id="intro">
+<h1>Introducción </h1> 
+  <div id="introduccion">
+    
+  </div>
+</div>
