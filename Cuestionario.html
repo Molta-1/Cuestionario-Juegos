@@ -480,6 +480,8 @@ box-shadow:
 cursor: pointer;
 margin-left: 20px;
 margin-top: 35px;
+float: left;
+border: 10px;
 }
 #intro {
 margin-top: 30px;
@@ -503,8 +505,22 @@ box-shadow:
 0 -3px #C7C2AF,
 0 -5px #414141;
 }
+#propo {
+background-color: #D4D0BA;
+width: 400px;
+height: 300px;
+padding-top: 20px;
+cursor: pointer;
+margin-left: 20px;
+margin-top: 35px;
+float: right;
+margin-top: 30px;
+display: none;
+cursor: auto;
+}
 </style>
 <script>
+//función para mostrar el contenido de la introducción
 function intro() {
   var x = document.getElementById("intro");
   if (x.style.display === "none") {
@@ -513,7 +529,15 @@ function intro() {
     x.style.display = "none";
   }
 }
-//función para mostrar el contenido de la introducción
+
+function propo() {
+    var x = document.getElementById("propo");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
 
 </script>
 <ul>
@@ -537,7 +561,7 @@ GENERAL</a>
 INTRODUCCIÓN
 </h1>
 <div id="introduccion">
-<p id="encabezado">
+<p id="encabezado" onclick="propo()">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Propósito
 del Cuestionario
 </p>
@@ -557,6 +581,11 @@ de los Datos
 </p>
 <h3>
 </div>
+</div>
+<div id="propo">
+<h1>
+Propósito de la investigación
+</h1>
 </div>
 </div>
 </div>

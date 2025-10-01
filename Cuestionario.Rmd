@@ -142,7 +142,7 @@ p:hover .arrowl {
 
 /*Inicio del apartado de íconos utilizados*/
 
-/*Inicio del apartado de los títulos (dropdown)*/
+/*Inicio del apartado de los títulos (panel oculto)*/
 
 #introduccion{
   background-color: #D4D0BA;
@@ -158,6 +158,8 @@ p:hover .arrowl {
   cursor: pointer;
   margin-left: 20px;
   margin-top: 35px;
+  float: left;
+  border: 10px;
 }
 
 
@@ -172,7 +174,6 @@ p:hover .arrowl {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   color: #414141;
-  
 }
 
 #encabezado:hover {
@@ -187,8 +188,22 @@ p:hover .arrowl {
   0 -5px #414141;
 }
 
+#propo {
+  background-color: #D4D0BA;
+  width: 400px;
+  height: 300px;
+  padding-top: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 35px;
+  float: right;
+  margin-top: 30px;
+  display: none;
+  cursor: auto;
+}
 ```
 ```{js, echo = FALSE}
+//función para mostrar el contenido de la introducción
 function intro() {
   var x = document.getElementById("intro");
   if (x.style.display === "none") {
@@ -197,7 +212,15 @@ function intro() {
     x.style.display = "none";
   }
 }
-//función para mostrar el contenido de la introducción
+
+function propo() {
+    var x = document.getElementById("propo");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
 
 ```
 
@@ -208,12 +231,18 @@ function intro() {
   <li><a href="#formulario"><img src="square.png" class="square"><img src="squarel.png" class="squarel">FORMULARIO</a></li>
 </ul>
 
+
 <div id="intro">
 <h1>INTRODUCCIÓN </h1> 
   <div id="introduccion">
-  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
+  <p id="encabezado" onclick="propo()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
   <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
   <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Intrucciones</p><h3>
   <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
   </div>
 </div>
+
+<div id="propo">
+  <h1>Propósito de la investigación</h1>
+</div>
+
