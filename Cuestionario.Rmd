@@ -65,7 +65,7 @@ h4 {color: #414141}
 tit{
   color: #414141;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(87, 87, 72, 0.5);
+  background-color: rgb(87, 87, 72, 0.3);
   font-size: 20px;
   display: block;
 }
@@ -74,7 +74,8 @@ texto{
   color: #414141;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  padding: 12px;
+  padding: 1px 12px 1px;
+  height: 215px;
   display: block;
 }
 /*Final del texto utilizado*/
@@ -121,7 +122,27 @@ a:hover{
   width: 22px;
   height: 22px;
   margin-bottom: 4px;
-  margin-left: 4px
+  margin-left: 4px;
+}
+
+.lineup{
+  width: 100%;
+  height: 45px;
+  display: block;
+  margin-bottom: -30px;
+}
+
+.linedown{
+  width: 100%;
+  height: 45px;
+  display: block;
+  margin-top: 60px;
+}
+
+.linedowntxt{
+  width: 100%;
+  height: 45px;
+  display: block;
 }
 
 .squarel{
@@ -168,9 +189,8 @@ p:hover .arrowl {
 
 #introduccion{
   background-color: #D4D0BA;
-  width: 400px;
+  width: 350px;
   height: 300px;
-  padding-top: 20px;
   box-shadow:
   3px 3px rgb(87, 87, 72, 0.5),  
   -20px 0px #C7C2AF,
@@ -185,6 +205,7 @@ p:hover .arrowl {
 
 
 #intro {
+  width: 300px;
   margin-top: 30px;
   display: none;
   cursor: auto;
@@ -195,6 +216,7 @@ p:hover .arrowl {
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   color: #414141;
+  padding-top: 5px;
 }
 
 #encabezado:hover {
@@ -232,6 +254,17 @@ p:hover .arrowl {
 }
 
 #ins {
+  background-color: #D4D0BA;
+  width: 400px;
+  height: 300px;
+  cursor: pointer;
+  margin-top: 36px;
+  float: right;
+  display: none;
+  cursor: auto;
+}
+
+#confi {
   background-color: #D4D0BA;
   width: 400px;
   height: 300px;
@@ -281,6 +314,15 @@ function ins() {
     }
 }
 
+function confi() {
+    var x = document.getElementById("confi");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
 ```
 
 <ul>
@@ -294,25 +336,42 @@ function ins() {
 <div id="intro">
 <h1>INTRODUCCIÓN </h1> 
   <div id="introduccion">
+  <img src="lineup.png" class="lineup">
   <p id="encabezado" onclick="propo()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
   <p id="encabezado" onclick="impor()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
   <p id="encabezado" onclick="ins()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Instrucciones</p><h3>
-  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
+  <p id="encabezado" onclick="confi()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
+    <img src="linedown.png" class="linedown">
   </div>
 </div>
 
 <div id="propo">
   <tit><img src="square.png" class="squares">Propósito del Cuestionario</tit>
+    <img src="lineup.png" class="lineup">
     <texto>El cuestionario tiene como propósito el descubrir cual es el consumo y hábitos de las personas que       juegan videojuegos, desde la plataforma en la que juegan, géneros de preferencias, gastos en estos              etc</texto>
+    <img src="linedown.png" class="linedowntxt">
 </div>
 
 <div id="impor">
   <tit><img src="square.png" class="squares">Importancia del Estudio</tit>
-    <texto>Con este estudio nos permite conocer un poco el consumo que hay de este medio ver cuales son las plataformas mas utilizadas, géneros que tendencia, un poco sobre el consumo monetario que se puede dar e inclusive razones por las cuales se da el abandono de este mismo</texto>
+    <img src="lineup.png" class="lineup">
+    <texto>Con este estudio nos permite conocer un poco el consumo que hay de este medio ver cuales son las plataformas mas utilizadas, géneros que tendencia, un poco sobre el consumo monetario que se puede dar e inclusive razones por las cuales se da el abandono de este mismo
+    </texto>
+    <img src="linedown.png" class="linedowntxt">
 </div>
 
 <div id="ins">
   <tit><img src="square.png" class="squares">Instrucciones para los Participantes</tit>
+  <img src="lineup.png" class="lineup">
       <texto> Para todos los participantes se espera que llenen el formulario adjuntado y respondan de manera sincera para tener un mejor resultado en los datos obtenidos
       </texto>
+    <img src="linedown.png" class="linedowntxt">
+</div>
+
+<div id="confi">
+  <tit><img src="square.png" class="squares">Confidencialidad de los Datos</tit>
+    <img src="lineup.png" class="lineup">
+      <texto> Los datos pedidos son totalmente anónimos no pedimos datos personales o sensibles como lo pueden ser el nombre, lugar de residencia, ingresos entre otros. Esto para garantizar un espacio seguro para aquellos que quieran realizarlo
+      </texto>
+      <img src="linedown.png" class="linedowntxt">
 </div>

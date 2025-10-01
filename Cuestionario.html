@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Calvo" />
 
-<meta name="date" content="2025-09-30" />
+<meta name="date" content="2025-10-01" />
 
 <title>Cuestionario Consumo de Videojuegos</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Cuestionario Consumo de Videojuegos</h1>
 <h4 class="author">Sebastian Calvo</h4>
-<h4 class="date">2025-09-30</h4>
+<h4 class="date">2025-10-01</h4>
 
 </div>
 
@@ -406,7 +406,7 @@ h4 {color: #414141}
 tit{
 color: #414141;
 font-family: Arial, Helvetica, sans-serif;
-background-color: rgb(87, 87, 72, 0.5);
+background-color: rgb(87, 87, 72, 0.3);
 font-size: 20px;
 display: block;
 }
@@ -414,7 +414,8 @@ texto{
 color: #414141;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 18px;
-padding: 12px;
+padding: 1px 12px 1px;
+height: 215px;
 display: block;
 }
 
@@ -452,7 +453,24 @@ margin-bottom: 4px;
 width: 22px;
 height: 22px;
 margin-bottom: 4px;
-margin-left: 4px
+margin-left: 4px;
+}
+.lineup{
+width: 100%;
+height: 45px;
+display: block;
+margin-bottom: -30px;
+}
+.linedown{
+width: 100%;
+height: 45px;
+display: block;
+margin-top: 60px;
+}
+.linedowntxt{
+width: 100%;
+height: 45px;
+display: block;
 }
 .squarel{
 width: 20px;
@@ -489,9 +507,8 @@ display: inline;
 
 #introduccion{
 background-color: #D4D0BA;
-width: 400px;
+width: 350px;
 height: 300px;
-padding-top: 20px;
 box-shadow:
 3px 3px rgb(87, 87, 72, 0.5), -20px 0px #C7C2AF,
 -22px 0px rgb(65, 65, 65, 0.2),
@@ -503,6 +520,7 @@ margin-top: 35px;
 float: left;
 }
 #intro {
+width: 300px;
 margin-top: 30px;
 display: none;
 cursor: auto;
@@ -512,6 +530,7 @@ background-color: #D4D0BA;
 font-size: 18px;
 font-family: Arial, Helvetica, sans-serif;
 color: #414141;
+padding-top: 5px;
 }
 #encabezado:hover {
 background-color: #414141;
@@ -545,6 +564,16 @@ display: none;
 cursor: auto;
 }
 #ins {
+background-color: #D4D0BA;
+width: 400px;
+height: 300px;
+cursor: pointer;
+margin-top: 36px;
+float: right;
+display: none;
+cursor: auto;
+}
+#confi {
 background-color: #D4D0BA;
 width: 400px;
 height: 300px;
@@ -593,6 +622,15 @@ function ins() {
     }
 }
 
+function confi() {
+    var x = document.getElementById("confi");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
 </script>
 <ul>
 <li>
@@ -615,6 +653,7 @@ GENERAL</a>
 INTRODUCCIÓN
 </h1>
 <div id="introduccion">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup">
 <p id="encabezado" onclick="propo()">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Propósito
 del Cuestionario
@@ -629,33 +668,45 @@ del Estudio
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Instrucciones
 </p>
 <h3>
-<p id="encabezado">
+<p id="encabezado" onclick="confi()">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Confidencialidad
 de los Datos
 </p>
 <h3>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedown">
 </div>
 </div>
 <div id="propo">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Propósito del
-Cuestionario</tit> <texto>El cuestionario tiene como propósito el
-descubrir cual es el consumo y hábitos de las personas que juegan
-videojuegos, desde la plataforma en la que juegan, géneros de
-preferencias, gastos en estos etc</texto></p>
+Cuestionario</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>El
+cuestionario tiene como propósito el descubrir cual es el consumo y
+hábitos de las personas que juegan videojuegos, desde la plataforma en
+la que juegan, géneros de preferencias, gastos en estos etc</texto>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
 </div>
 <div id="impor">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Importancia del
-Estudio</tit> <texto>Con este estudio nos permite conocer un poco el
-consumo que hay de este medio ver cuales son las plataformas mas
-utilizadas, géneros que tendencia, un poco sobre el consumo monetario
-que se puede dar e inclusive razones por las cuales se da el abandono de
-este mismo</texto></p>
+Estudio</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>Con este
+estudio nos permite conocer un poco el consumo que hay de este medio ver
+cuales son las plataformas mas utilizadas, géneros que tendencia, un
+poco sobre el consumo monetario que se puede dar e inclusive razones por
+las cuales se da el abandono de este mismo </texto>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
 </div>
 <div id="ins">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Instrucciones para los
-Participantes</tit> <texto> Para todos los participantes se espera que
-llenen el formulario adjuntado y respondan de manera sincera para tener
-un mejor resultado en los datos obtenidos </texto></p>
+Participantes</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto> Para
+todos los participantes se espera que llenen el formulario adjuntado y
+respondan de manera sincera para tener un mejor resultado en los datos
+obtenidos </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+</div>
+<div id="confi">
+<p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Confidencialidad de los
+Datos</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto> Los datos
+pedidos son totalmente anónimos no pedimos datos personales o sensibles
+como lo pueden ser el nombre, lugar de residencia, ingresos entre otros.
+Esto para garantizar un espacio seguro para aquellos que quieran
+realizarlo </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
 </div>
 </div>
 </div>
