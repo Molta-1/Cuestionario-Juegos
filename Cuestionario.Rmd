@@ -62,12 +62,27 @@ h1 {text-shadow: 3px 4px #969696}
 
 h4 {color: #414141}
 
+tit{
+  color: #414141;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(87, 87, 72, 0.5);
+  font-size: 20px;
+  display: block;
+}
+
+texto{
+  color: #414141;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 12px;
+  display: block;
+}
 /*Final del texto utilizado*/
 
 /*inicio del apartado de links*/
 a{
   background-color: rgb(48, 48, 40, 0.2);
-  padding: 8px;
+  padding: 4px;
   padding-right: 50px;
   font-family: Arial, Helvetica, sans-serif;
   color: #414141
@@ -100,6 +115,13 @@ a:hover{
   width: 20px;
   height: 20px;
   margin-bottom: 4px;
+}
+
+.squares{
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  margin-left: 4px
 }
 
 .squarel{
@@ -159,7 +181,6 @@ p:hover .arrowl {
   margin-left: 20px;
   margin-top: 35px;
   float: left;
-  border: 10px;
 }
 
 
@@ -192,15 +213,35 @@ p:hover .arrowl {
   background-color: #D4D0BA;
   width: 400px;
   height: 300px;
-  padding-top: 20px;
   cursor: pointer;
-  margin-left: 20px;
-  margin-top: 35px;
+  margin-top: 36px;
   float: right;
-  margin-top: 30px;
   display: none;
   cursor: auto;
 }
+
+#impor {
+  background-color: #D4D0BA;
+  width: 400px;
+  height: 300px;
+  cursor: pointer;
+  margin-top: 36px;
+  float: right;
+  display: none;
+  cursor: auto;
+}
+
+#ins {
+  background-color: #D4D0BA;
+  width: 400px;
+  height: 300px;
+  cursor: pointer;
+  margin-top: 36px;
+  float: right;
+  display: none;
+  cursor: auto;
+}
+
 ```
 ```{js, echo = FALSE}
 //función para mostrar el contenido de la introducción
@@ -222,6 +263,24 @@ function propo() {
     }
 }
 
+function impor() {
+    var x = document.getElementById("impor");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function ins() {
+    var x = document.getElementById("ins");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
 ```
 
 <ul>
@@ -236,13 +295,24 @@ function propo() {
 <h1>INTRODUCCIÓN </h1> 
   <div id="introduccion">
   <p id="encabezado" onclick="propo()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
-  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
-  <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Intrucciones</p><h3>
+  <p id="encabezado" onclick="impor()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
+  <p id="encabezado" onclick="ins()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Instrucciones</p><h3>
   <p id="encabezado"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
   </div>
 </div>
 
 <div id="propo">
-  <h1>Propósito de la investigación</h1>
+  <tit><img src="square.png" class="squares">Propósito del Cuestionario</tit>
+    <texto>El cuestionario tiene como propósito el descubrir cual es el consumo y hábitos de las personas que       juegan videojuegos, desde la plataforma en la que juegan, géneros de preferencias, gastos en estos              etc</texto>
 </div>
 
+<div id="impor">
+  <tit><img src="square.png" class="squares">Importancia del Estudio</tit>
+    <texto>Con este estudio nos permite conocer un poco el consumo que hay de este medio ver cuales son las plataformas mas utilizadas, géneros que tendencia, un poco sobre el consumo monetario que se puede dar e inclusive razones por las cuales se da el abandono de este mismo</texto>
+</div>
+
+<div id="ins">
+  <tit><img src="square.png" class="squares">Instrucciones para los Participantes</tit>
+      <texto> Para todos los participantes se espera que llenen el formulario adjuntado y respondan de manera sincera para tener un mejor resultado en los datos obtenidos
+      </texto>
+</div>
