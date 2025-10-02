@@ -86,13 +86,15 @@ a{
   padding: 4px;
   padding-right: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #414141
+  color: #414141;
+  margin-bottom: 60px;
 }
 
 a:link{
   background-color: rgb(48, 48, 40, 0.2);
   font-family: Arial, Helvetica, sans-serif;
-  color: #414141
+  color: #414141;
+  margin-bottom: 60px;
 }
 
 a:hover{
@@ -185,7 +187,7 @@ p:hover .arrowl {
 
 /*Inicio del apartado de íconos utilizados*/
 
-/*Inicio del apartado de los títulos (panel oculto)*/
+/*Inicio del apartado de los títulos (panel oculto) de introducción*/
 
 #introduccion{
   background-color: #D4D0BA;
@@ -203,8 +205,7 @@ p:hover .arrowl {
   float: left;
 }
 
-
-#intro {
+.contenido-dinamico2 {
   margin-top: 30px;
   display: none;
   cursor: auto;
@@ -230,53 +231,133 @@ p:hover .arrowl {
   0 -5px #414141;
 }
 
-#propo {
+.contenido-dinamico {
   background-color: #D4D0BA;
   width: 500px;
-  height: 300px;
-  cursor: pointer;
-  margin-top: 36px;
-  float: right;
-  display: none;
+  height: 300px; 
   cursor: auto;
+  margin-top: 36px;
+  float: right; 
+  display: none; 
 }
 
-#impor {
+
+/*Final del apartado de los títulos (panel oculto) de introducción*/
+
+/*Inicio del apartado de los títulos (panel oculto) de introducción*/
+
+#poblacion{
   background-color: #D4D0BA;
-  width: 500px;
+  width: 350px;
   height: 300px;
+  box-shadow:
+  3px 3px rgb(87, 87, 72, 0.5),  
+  -20px 0px #C7C2AF,
+  -22px 0px rgb(65, 65, 65, 0.2),
+  -28px 0px #C7C2AF,
+  -38px 0px rgb(65, 65, 65, 0.2);
   cursor: pointer;
-  margin-top: 36px;
-  float: right;
-  display: none;
-  cursor: auto;
+  margin-left: 20px;
+  margin-top: 35px;
+  float: left;
 }
 
-#ins {
+
+#encabezado {
   background-color: #D4D0BA;
-  width: 500px;
-  height: 300px;
-  cursor: pointer;
-  margin-top: 36px;
-  float: right;
-  display: none;
-  cursor: auto;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #414141;
+  padding-top: 5px;
 }
 
-#confi {
+#encabezado:hover {
+  background-color: #414141;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #C7C2AF;
+  box-shadow:
+  0 3px #C7C2AF,
+  0 5px #414141,
+  0 -3px #C7C2AF,
+  0 -5px #414141;
+}
+
+/*Final del apartado de los títulos (panel oculto) de población meta*/
+
+/*Inicio del apartado de los títulos (panel oculto) de objetivo*/
+#objetivo{
   background-color: #D4D0BA;
-  width: 500px;
-  height: 300px;
+  width: 700px;
+  height: 360px;
+  box-shadow:
+  3px 3px rgb(87, 87, 72, 0.5),  
+  -20px 0px #C7C2AF,
+  -22px 0px rgb(65, 65, 65, 0.2),
+  -28px 0px #C7C2AF,
+  -38px 0px rgb(65, 65, 65, 0.2);
   cursor: pointer;
-  margin-top: 36px;
-  float: right;
-  display: none;
-  cursor: auto;
+  margin-left: 20px;
+  margin-top: 35px;
+  float: left;
 }
+/*Final del apartado de los títulos (panel oculto) de objetivo*/
 
+/*Inicio del apartado de los títulos (panel oculto) de formulario*/
+#formulario{
+  background-color: #D4D0BA;
+  width: 200px;
+  height: 200px;
+  box-shadow:
+  3px 3px rgb(87, 87, 72, 0.5),  
+  -20px 0px #C7C2AF,
+  -22px 0px rgb(65, 65, 65, 0.2),
+  -28px 0px #C7C2AF,
+  -38px 0px rgb(65, 65, 65, 0.2);
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 35px;
+  float: left;
+}
+/*Final del apartado de los títulos (panel oculto) de formulario*/
 ```
 ```{js, echo = FALSE}
-//función para mostrar el contenido de la introducción
+
+function cerrarTodos2() {
+  var contenidos = document.getElementsByClassName("contenido-dinamico2");
+
+  for (var i = 0; i < contenidos.length; i++) {
+    contenidos[i].style.display = "none";
+  }
+}
+function mostrarContenido2(idContenido) {
+  var bloque = document.getElementById(idContenido);
+  if (bloque.style.display === "block") {
+    bloque.style.display = "none";
+    cerrarTodos();
+  } else {
+    cerrarTodos2();
+    cerrarTodos(); 
+    bloque.style.display = "block";
+  }
+}
+
+//Inicio de función para aparición de un bloque (contenido)
+function cerrarTodos() {
+  var contenidos = document.getElementsByClassName("contenido-dinamico");
+
+  for (var i = 0; i < contenidos.length; i++) {
+    contenidos[i].style.display = "none";
+  }
+}
+function mostrarContenido(idContenido) {
+  cerrarTodos();
+  var bloque = document.getElementById(idContenido);
+  bloque.style.display = "block";
+}
+//Final de función para aparición de un bloque 
+
+//Inicio de función para mostrar el contenido de la introducción
 function intro() {
   var x = document.getElementById("intro");
   if (x.style.display === "none") {
@@ -322,55 +403,166 @@ function confi() {
     }
 }
 
+//Final de función para mostrar el contenido de la introducción
+
+//Inicio de función para mostrar el contenido de la población
+function pobla() {
+  var x = document.getElementById("pobla");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function carac() {
+    var x = document.getElementById("carac");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function inc() {
+    var x = document.getElementById("inc");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function ex() {
+    var x = document.getElementById("ex");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function esti() {
+    var x = document.getElementById("esti");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+//Final de función para mostrar el contenido de la introducción
 ```
 
 <ul>
-  <li><a class="intro" onclick="intro()"><img src="square.png" class="square"><img src="squarel.png" class="squarel">INTRODUCCIÓN</a></li>
-  <li><a href="#poblacion"><img src="square.png" class="square"><img src="squarel.png" class="squarel">POBLACIÓN META</a></li>
-  <li><a href="#objetivo"><img src="square.png" class="square"><img src="squarel.png" class="squarel">OBJETIVO GENERAL</a></li>
-  <li><a href="#formulario"><img src="square.png" class="square"><img src="squarel.png" class="squarel">FORMULARIO</a></li>
+  <li><a class="intro" onclick="mostrarContenido2('intro')"><img src="square.png" class="square"><img src="squarel.png" class="squarel">INTRODUCCIÓN</a></li>
+  <li><a class="pobla" onclick="mostrarContenido2('pobla')"><img src="square.png" class="square"><img src="squarel.png" class="squarel">POBLACIÓN META</a></li>
+  <li><a class="obje" onclick="mostrarContenido2('obje')"><img src="square.png" class="square"><img src="squarel.png" class="squarel">OBJETIVO GENERAL</a></li>
+  <li><a class="formu" onclick="mostrarContenido2('formu')"><img src="square.png" class="square"><img src="squarel.png" class="squarel">FORMULARIO</a></li>
 </ul>
 
 
-<div id="intro">
+<div id="intro" class="contenido-dinamico2">
 <h1>INTRODUCCIÓN </h1> 
   <div id="introduccion">
   <img src="lineup.png" class="lineup">
-  <p id="encabezado" onclick="propo()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
-  <p id="encabezado" onclick="impor()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
-  <p id="encabezado" onclick="ins()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Instrucciones</p><h3>
-  <p id="encabezado" onclick="confi()"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('propo')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Propósito del Cuestionario</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('impor')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Importancia del Estudio</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('ins')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Instrucciones</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('confi')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Confidencialidad de los Datos</p><h3>
     <img src="linedown.png" class="linedown">
   </div>
-  <div id="propo">
+  <div id="propo" class="contenido-dinamico">
   <tit><img src="square.png" class="squares">Propósito del Cuestionario</tit>
     <img src="lineup.png" class="lineup">
-    <texto>El cuestionario tiene como propósito el descubrir cual es el consumo y hábitos de las personas que       juegan videojuegos, desde la plataforma en la que juegan, géneros de preferencias, gastos en estos              etc</texto>
+    <texto>El cuestionario tiene como propósito el descubrir cual es el consumo y hábitos de las personas que       juegan videojuegos, desde la plataforma en la que juegan, géneros de preferencias, gastos en estos              entre otros.</texto>
     <img src="linedown.png" class="linedowntxt">
 </div>
 
-<div id="impor">
+<div id="impor" class="contenido-dinamico">
   <tit><img src="square.png" class="squares">Importancia del Estudio</tit>
     <img src="lineup.png" class="lineup">
-    <texto>Con este estudio nos permite conocer un poco el consumo que hay de este medio ver cuales son las plataformas mas utilizadas, géneros que tendencia, un poco sobre el consumo monetario que se puede dar e inclusive razones por las cuales se da el abandono de este mismo
+    <texto>Con este estudio nos permite conocer un poco el consumo que hay de este medio ver cuales son las plataformas mas utilizadas, géneros que tendencia, un poco sobre el consumo monetario que se puede dar e inclusive razones por las cuales se da el abandono de este mismo.
     </texto>
     <img src="linedown.png" class="linedowntxt">
 </div>
 
-<div id="ins">
+<div id="ins" class="contenido-dinamico">
   <tit><img src="square.png" class="squares">Instrucciones para los Participantes</tit>
   <img src="lineup.png" class="lineup">
-      <texto> Para todos los participantes se espera que llenen el formulario adjuntado y respondan de manera sincera para tener un mejor resultado en los datos obtenidos
+      <texto> Para todos los participantes se espera que llenen el formulario adjuntado y respondan de manera sincera para tener un mejor resultado en los datos obtenidos.
       </texto>
     <img src="linedown.png" class="linedowntxt">
 </div>
 
-<div id="confi">
+<div id="confi" class="contenido-dinamico">
   <tit><img src="square.png" class="squares">Confidencialidad de los Datos</tit>
     <img src="lineup.png" class="lineup">
-      <texto> Los datos pedidos son totalmente anónimos no pedimos datos personales o sensibles como lo pueden ser el nombre, lugar de residencia, ingresos entre otros. Esto para garantizar un espacio seguro para aquellos que quieran realizarlo
+      <texto> Los datos pedidos son totalmente anónimos no pedimos datos personales o sensibles como lo pueden ser el nombre, lugar de residencia, ingresos entre otros. Esto para garantizar un espacio seguro para aquellos que quieran realizarlo.
       </texto>
       <img src="linedown.png" class="linedowntxt">
 </div>
 </div>
 
+
+<div id="pobla" class="contenido-dinamico2">
+<h1>POBLACIÓN META </h1> 
+  <div id="poblacion">
+  <img src="lineup.png" class="lineup">
+  <p id="encabezado" onclick="mostrarContenido('carac')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Características Demográficas</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('inc')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Criterios de Inclusión</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('ex')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Criterios de Exclusión</p><h3>
+  <p id="encabezado" onclick="mostrarContenido('esti')"><img src="arrow.png" class="arrow"><img src="arrowl.png" class="arrowl">Tamaño Estimado de la Población</p><h3>
+    <img src="linedown.png" class="linedown">
+  </div>
+  <div id="carac" class="contenido-dinamico">
+  <tit><img src="square.png" class="squares">Características Demográficas</tit>
+    <img src="lineup.png" class="lineup">
+    <texto>Las características demográficas son un dato significativo en nuestra investigación, ya que esto nos permite conocer que distintas situaciones se viven dependiendo de la edad, ocupación entre otros. Podemos analizar por ejemplo que géneros o que tipo de experiencias prefiere una persona mayor de 18 años a una mayor de 25, si hay alguna diferencia o se mantiene, de aquí radica la importancia de este apartado.</texto>
+    <img src="linedown.png" class="linedowntxt">
+</div>
+
+<div id="inc" class="contenido-dinamico">
+  <tit><img src="square.png" class="squares">Criterios de Inclusión</tit>
+    <img src="lineup.png" class="lineup">
+    <texto>Se espera que la persona que responda la encuesta juegue o haya jugado en el último año, además de otros factores como lo son si gusta de experiencias compartidas, si consume productos de pago o solo experiencias. gratis entre otros factores</texto>
+    <img src="linedown.png" class="linedowntxt">
+</div>
+
+<div id="ex" class="contenido-dinamico">
+  <tit><img src="square.png" class="squares">Criterios de Exclusión</tit>
+  <img src="lineup.png" class="lineup">
+      <texto> El mayor criterio de exclusión son las personas que no consumen este medio ya sea por desinterés, falta de acceso o cualquier otro motivo, con el simple hecho de no haber consumido en el último año videojuegos queda descartado.
+      </texto>
+    <img src="linedown.png" class="linedowntxt">
+</div>
+
+<div id="esti" class="contenido-dinamico">
+  <tit><img src="square.png" class="squares">Tamaño Estimado de la Población</tit>
+    <img src="lineup.png" class="lineup">
+      <texto>Se estima tener una población mínima de 50 personas encuestadas, a pesar de ser un valor bajo puede mostrarnos como es el actuar (consumir en este caso) de dichas poblaciones a las cuales pertenecen (edad, ocupación, plataforma entre otros).
+      </texto>
+      <img src="linedown.png" class="linedowntxt">
+</div>
+</div>
+
+<div id="obje" class="contenido-dinamico2">
+<h1>OBJETIVO GENERAL </h1> 
+  <div id="objetivo">
+  <tit><img src="square.png" class="squares">Cual es el Objetivo General</tit>
+  <img src="lineup.png" class="lineup">
+  <texto>El objetivo general de este cuestionario es el poder analizar los gusto y comportamiento de las personas a la hora de consumir este medio, la idea es que poder dimensionar cosas como la inversión de dinero y tiempo que se puede dar, como los gustos o preferencias pueden influir en dichas inversiones, que factores pueden influir para que la persona no termine las entregas que empieza, sea por tiempo, falta de actitud o inlcusive la cantidad de títulos que se están consumiendo.
+  Por eso se espera que la persona responda con honestidad para tener los mejores datos posibles y así poder tener los resultados mas cercanos a lo que se puede estar dando en la población
+  </texto>
+  <img src="linedown.png" class="linedown">
+  </div>
+</div>
+
+<div id="formu" class="contenido-dinamico2">
+<h1>FORMULARIO </h1> 
+  <div id="formulario">
+  <tit><img src="square.png" class="squares">Formulario</tit>
+  <img src="lineup.png" class="lineup">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfLvusKTyUyjkAvmi6BkSaZTSx6WlgSS7hd67fhct9cFixUww/viewform?usp=header">Enlace de formulario</a>
+  <img src="linedown.png" class="linedown">
+  </div>
+</div>

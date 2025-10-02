@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Calvo" />
 
-<meta name="date" content="2025-10-01" />
+<meta name="date" content="2025-10-02" />
 
 <title>Cuestionario Consumo de Videojuegos</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Cuestionario Consumo de Videojuegos</h1>
 <h4 class="author">Sebastian Calvo</h4>
-<h4 class="date">2025-10-01</h4>
+<h4 class="date">2025-10-02</h4>
 
 </div>
 
@@ -425,12 +425,14 @@ background-color: rgb(48, 48, 40, 0.2);
 padding: 4px;
 padding-right: 50px;
 font-family: Arial, Helvetica, sans-serif;
-color: #414141
+color: #414141;
+margin-bottom: 60px;
 }
 a:link{
 background-color: rgb(48, 48, 40, 0.2);
 font-family: Arial, Helvetica, sans-serif;
-color: #414141
+color: #414141;
+margin-bottom: 60px;
 }
 a:hover{
 background-color: #414141;
@@ -519,7 +521,7 @@ margin-left: 20px;
 margin-top: 35px;
 float: left;
 }
-#intro {
+.contenido-dinamico2 {
 margin-top: 30px;
 display: none;
 cursor: auto;
@@ -542,49 +544,117 @@ box-shadow:
 0 -3px #C7C2AF,
 0 -5px #414141;
 }
-#propo {
+.contenido-dinamico {
 background-color: #D4D0BA;
 width: 500px;
-height: 300px;
-cursor: pointer;
+height: 300px; cursor: auto;
 margin-top: 36px;
-float: right;
-display: none;
-cursor: auto;
-}
-#impor {
+float: right; display: none; }
+
+
+#poblacion{
 background-color: #D4D0BA;
-width: 500px;
+width: 350px;
 height: 300px;
+box-shadow:
+3px 3px rgb(87, 87, 72, 0.5), -20px 0px #C7C2AF,
+-22px 0px rgb(65, 65, 65, 0.2),
+-28px 0px #C7C2AF,
+-38px 0px rgb(65, 65, 65, 0.2);
 cursor: pointer;
-margin-top: 36px;
-float: right;
-display: none;
-cursor: auto;
+margin-left: 20px;
+margin-top: 35px;
+float: left;
 }
-#ins {
+#encabezado {
 background-color: #D4D0BA;
-width: 500px;
-height: 300px;
-cursor: pointer;
-margin-top: 36px;
-float: right;
-display: none;
-cursor: auto;
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+color: #414141;
+padding-top: 5px;
 }
-#confi {
+#encabezado:hover {
+background-color: #414141;
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+color: #C7C2AF;
+box-shadow:
+0 3px #C7C2AF,
+0 5px #414141,
+0 -3px #C7C2AF,
+0 -5px #414141;
+}
+
+
+#objetivo{
 background-color: #D4D0BA;
-width: 500px;
-height: 300px;
+width: 700px;
+height: 360px;
+box-shadow:
+3px 3px rgb(87, 87, 72, 0.5), -20px 0px #C7C2AF,
+-22px 0px rgb(65, 65, 65, 0.2),
+-28px 0px #C7C2AF,
+-38px 0px rgb(65, 65, 65, 0.2);
 cursor: pointer;
-margin-top: 36px;
-float: right;
-display: none;
-cursor: auto;
+margin-left: 20px;
+margin-top: 35px;
+float: left;
 }
+
+
+#formulario{
+background-color: #D4D0BA;
+width: 200px;
+height: 200px;
+box-shadow:
+3px 3px rgb(87, 87, 72, 0.5), -20px 0px #C7C2AF,
+-22px 0px rgb(65, 65, 65, 0.2),
+-28px 0px #C7C2AF,
+-38px 0px rgb(65, 65, 65, 0.2);
+cursor: pointer;
+margin-left: 20px;
+margin-top: 35px;
+float: left;
+}
+
 </style>
 <script>
-//función para mostrar el contenido de la introducción
+
+function cerrarTodos2() {
+  var contenidos = document.getElementsByClassName("contenido-dinamico2");
+
+  for (var i = 0; i < contenidos.length; i++) {
+    contenidos[i].style.display = "none";
+  }
+}
+function mostrarContenido2(idContenido) {
+  var bloque = document.getElementById(idContenido);
+  if (bloque.style.display === "block") {
+    bloque.style.display = "none";
+    cerrarTodos();
+  } else {
+    cerrarTodos2();
+    cerrarTodos(); 
+    bloque.style.display = "block";
+  }
+}
+
+//Inicio de función para aparición de un bloque (contenido)
+function cerrarTodos() {
+  var contenidos = document.getElementsByClassName("contenido-dinamico");
+
+  for (var i = 0; i < contenidos.length; i++) {
+    contenidos[i].style.display = "none";
+  }
+}
+function mostrarContenido(idContenido) {
+  cerrarTodos();
+  var bloque = document.getElementById(idContenido);
+  bloque.style.display = "block";
+}
+//Final de función para aparición de un bloque 
+
+//Inicio de función para mostrar el contenido de la introducción
 function intro() {
   var x = document.getElementById("intro");
   if (x.style.display === "none") {
@@ -630,81 +700,226 @@ function confi() {
     }
 }
 
+//Final de función para mostrar el contenido de la introducción
+
+//Inicio de función para mostrar el contenido de la población
+function pobla() {
+  var x = document.getElementById("pobla");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function carac() {
+    var x = document.getElementById("carac");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function inc() {
+    var x = document.getElementById("inc");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function ex() {
+    var x = document.getElementById("ex");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function esti() {
+    var x = document.getElementById("esti");
+    if (x.style.display === "none") {
+        x.style.display = "block"; 
+    } else {
+        x.style.display = "none";
+    }
+}
+//Final de función para mostrar el contenido de la introducción
 </script>
 <ul>
 <li>
-<a class="intro" onclick="intro()"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">INTRODUCCIÓN</a>
+<a class="intro" onclick="mostrarContenido2(&#39;intro&#39;)"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">INTRODUCCIÓN</a>
 </li>
 <li>
-<a href="#poblacion"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">POBLACIÓN
+<a class="pobla" onclick="mostrarContenido2(&#39;pobla&#39;)"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">POBLACIÓN
 META</a>
 </li>
 <li>
-<a href="#objetivo"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">OBJETIVO
+<a class="obje" onclick="mostrarContenido2(&#39;obje&#39;)"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">OBJETIVO
 GENERAL</a>
 </li>
 <li>
-<a href="#formulario"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">FORMULARIO</a>
+<a class="formu" onclick="mostrarContenido2(&#39;formu&#39;)"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="square"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nGNgGAWkgBOHl/6nBmYYteDEqAUnRi3ABUYtODFqwYlRC07Q2oJRwIAFAADOSAe5QJPqnAAAAABJRU5ErkJggg==" class="squarel">FORMULARIO</a>
 </li>
 </ul>
-<div id="intro">
+<div id="intro" class="contenido-dinamico2">
 <h1>
 INTRODUCCIÓN
 </h1>
 <div id="introduccion">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup">
-<p id="encabezado" onclick="propo()">
+<p id="encabezado" onclick="mostrarContenido(&#39;propo&#39;)">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Propósito
 del Cuestionario
 </p>
 <h3>
-<p id="encabezado" onclick="impor()">
+<p id="encabezado" onclick="mostrarContenido(&#39;impor&#39;)">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Importancia
 del Estudio
 </p>
 <h3>
-<p id="encabezado" onclick="ins()">
+<p id="encabezado" onclick="mostrarContenido(&#39;ins&#39;)">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Instrucciones
 </p>
 <h3>
-<p id="encabezado" onclick="confi()">
+<p id="encabezado" onclick="mostrarContenido(&#39;confi&#39;)">
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Confidencialidad
 de los Datos
 </p>
 <h3>
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedown">
 </div>
-<div id="propo">
+<div id="propo" class="contenido-dinamico">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Propósito del
 Cuestionario</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>El
 cuestionario tiene como propósito el descubrir cual es el consumo y
 hábitos de las personas que juegan videojuegos, desde la plataforma en
-la que juegan, géneros de preferencias, gastos en estos etc</texto>
-<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+la que juegan, géneros de preferencias, gastos en estos entre
+otros.</texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
 </div>
-<div id="impor">
+<div id="impor" class="contenido-dinamico">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Importancia del
 Estudio</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>Con este
 estudio nos permite conocer un poco el consumo que hay de este medio ver
 cuales son las plataformas mas utilizadas, géneros que tendencia, un
 poco sobre el consumo monetario que se puede dar e inclusive razones por
-las cuales se da el abandono de este mismo </texto>
+las cuales se da el abandono de este mismo. </texto>
 <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
 </div>
-<div id="ins">
+<div id="ins" class="contenido-dinamico">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Instrucciones para los
 Participantes</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto> Para
 todos los participantes se espera que llenen el formulario adjuntado y
 respondan de manera sincera para tener un mejor resultado en los datos
-obtenidos </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+obtenidos. </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
 </div>
-<div id="confi">
+<div id="confi" class="contenido-dinamico">
 <p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Confidencialidad de los
 Datos</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto> Los datos
 pedidos son totalmente anónimos no pedimos datos personales o sensibles
 como lo pueden ser el nombre, lugar de residencia, ingresos entre otros.
 Esto para garantizar un espacio seguro para aquellos que quieran
-realizarlo </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+realizarlo. </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+</div>
+</div>
+<div id="pobla" class="contenido-dinamico2">
+<h1>
+POBLACIÓN META
+</h1>
+<div id="poblacion">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup">
+<p id="encabezado" onclick="mostrarContenido(&#39;carac&#39;)">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Características
+Demográficas
+</p>
+<h3>
+<p id="encabezado" onclick="mostrarContenido(&#39;inc&#39;)">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Criterios
+de Inclusión
+</p>
+<h3>
+<p id="encabezado" onclick="mostrarContenido(&#39;ex&#39;)">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Criterios
+de Exclusión
+</p>
+<h3>
+<p id="encabezado" onclick="mostrarContenido(&#39;esti&#39;)">
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3YPUrEUBSG4YMgIjZOaamV1ilMkZv7fYmBtNq5CpcQt2BpK7OB2YA/oFjIuAfL6QQbQTEy3BELEcxInJx4Hjj1zZubhCQixhhjjDH/G4Bzkvdpmu6IZiTr2TyRPJQehNTTAXAWx/GqaA9hiBnneb4l2kMYYh5JHoj2kNm8kTyJomhZlId87M6Vc25DtIcwxEy893uiPYQh5pXkcVVVS3MtBuCmyYJtD4BRkiSDVs/aH8Y8ANhVH8IQ8wzgSH0IP2dYFMVaH0JqkrcWwu7MUPWlhT7c7Jjz8XvdsYiR935duqRhxMuvXlHa1GAXJgBy6aofhlxqf43X/2E1/dTNsmxftPgmYuyc2xRN+DXktCzLFdGGPfpBd0Hyznu/vehjMcYYY4yR9r0DOaauNghos8IAAAAASUVORK5CYII=" class="arrow"><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR4nO3YQUrDUBAG4EEQETe6dKkrPYEH0AvozlN4BL2Cy26lK6kzKUigG5N5MTOirXgFl90V3AiKT6wVERHaSmzecz7413l/mLy8BMAYY4wx5n8Thxfq8FZz3ISQqSM/ykPpcB8iKOLfIownIqeLEHoRfU/vumitQwRFvDgaaI57EHqR0Zi9CNNxt9uYh5CLfAa5y2erEH4R8srUlyLZgeCLuGGelenI+8O5KS+G5YQXrDTisF0U5ytV37W/CeO9umQr/CJuuAk8ao4HERShjzTvOp2lGIp4YVIrovVJM/DRwggedp5m+2W6nPnC3dcXYpbRMtTJhKP09KsjSpXGHyXql462oa7GLJEHfYyP4sNKHA2kSHYhFD8U6V1xew1Cot/GiRppmi5AaDSWH3TCmAnjTZm1Nma9FmOMMcYYqN4roqbSLfx+Mr4AAAAASUVORK5CYII=" class="arrowl">Tamaño
+Estimado de la Población
+</p>
+<h3>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedown">
+</div>
+<div id="carac" class="contenido-dinamico">
+<p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Características
+Demográficas</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>Las
+características demográficas son un dato significativo en nuestra
+investigación, ya que esto nos permite conocer que distintas situaciones
+se viven dependiendo de la edad, ocupación entre otros. Podemos analizar
+por ejemplo que géneros o que tipo de experiencias prefiere una persona
+mayor de 18 años a una mayor de 25, si hay alguna diferencia o se
+mantiene, de aquí radica la importancia de este apartado.</texto>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+</div>
+<div id="inc" class="contenido-dinamico">
+<p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Criterios de
+Inclusión</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>Se espera
+que la persona que responda la encuesta juegue o haya jugado en el
+último año, además de otros factores como lo son si gusta de
+experiencias compartidas, si consume productos de pago o solo
+experiencias. gratis entre otros factores</texto>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+</div>
+<div id="ex" class="contenido-dinamico">
+<p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Criterios de
+Exclusión</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto> El mayor
+criterio de exclusión son las personas que no consumen este medio ya sea
+por desinterés, falta de acceso o cualquier otro motivo, con el simple
+hecho de no haber consumido en el último año videojuegos queda
+descartado. </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+</div>
+<div id="esti" class="contenido-dinamico">
+<p><tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Tamaño Estimado de la
+Población</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>Se estima
+tener una población mínima de 50 personas encuestadas, a pesar de ser un
+valor bajo puede mostrarnos como es el actuar (consumir en este caso) de
+dichas poblaciones a las cuales pertenecen (edad, ocupación, plataforma
+entre otros). </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedowntxt"></p>
+</div>
+</div>
+<div id="obje" class="contenido-dinamico2">
+<h1>
+OBJETIVO GENERAL
+</h1>
+<div id="objetivo">
+<tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Cual es el Objetivo
+General</tit> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup"> <texto>El objetivo
+general de este cuestionario es el poder analizar los gusto y
+comportamiento de las personas a la hora de consumir este medio, la idea
+es que poder dimensionar cosas como la inversión de dinero y tiempo que
+se puede dar, como los gustos o preferencias pueden influir en dichas
+inversiones, que factores pueden influir para que la persona no termine
+las entregas que empieza, sea por tiempo, falta de actitud o inlcusive
+la cantidad de títulos que se están consumiendo. Por eso se espera que
+la persona responda con honestidad para tener los mejores datos posibles
+y así poder tener los resultados mas cercanos a lo que se puede estar
+dando en la población </texto> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedown">
+</div>
+</div>
+<div id="formu" class="contenido-dinamico2">
+<h1>
+FORMULARIO
+</h1>
+<div id="formulario">
+<tit><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaklEQVR4nO3PoQ2AUADE0L9a9x8KDOoUhhTRJh3gnVNVVfVhwPWHT5AnG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEEmG0CQyQYQZLIBBJlsAEGqqqrO627OpPBysiLhJgAAAABJRU5ErkJggg==" class="squares">Formulario</tit>
+<img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMUlEQVR4nO3PsQkAIBAEwavswP6bMjAzN3iZgS1gEwDgaLsmlts3IwAAAAAAAACQpzYlsVo1a9/BPQAAAABJRU5ErkJggg==" class="lineup">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfLvusKTyUyjkAvmi6BkSaZTSx6WlgSS7hd67fhct9cFixUww/viewform?usp=header">Enlace
+de formulario</a> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAALklEQVR4nO3PAQkAMBDEsFN2MP+m5mLw+wQqoAkAAAAAAAAAvNH2TCzfjgDAdhf0R1o1tpfOiwAAAABJRU5ErkJggg==" class="linedown">
+</div>
+</div>
 </div>
 </div>
 </div>
